@@ -35,10 +35,9 @@ class FlxUIRegion extends FlxSprite implements IFlxUIWidget implements IResizabl
 #if FLX_DEBUG
 	override public function drawDebugOnCamera(camera:FlxCamera) {
 		var rect = getBoundingBox(camera);
-		var gfx = beginDrawDebug(camera);
+		beginDrawDebug(camera);
 		
-		gfx.beginFill(debugBoundingBoxColor, 0.5);
-		gfx.drawRect(rect.x, rect.y, rect.width, rect.height);
+		camera.drawDebugFilledRect(rect.x, rect.y, rect.width, rect.height, debugBoundingBoxColor, 0.5);
 		
 		endDrawDebug(camera);
 	}
